@@ -8,11 +8,11 @@ define
 
     /**
      * @class
-     * @param p_model {ModelPaddle} The model of the paddle object.
+     * @param p_model {ModelPlayer} The model of the paddle object.
      * @param p_init     A JSON object containing all view initialization information.
      * @param p_document The HTML document of the web app.
      */
-    function viewPlayer(p_model, p_init, p_document)
+    function ViewPlayer(p_model, p_init, p_document)
     {
       this.model       = p_model;
 
@@ -46,15 +46,16 @@ define
      *
      * @param p_context The 2d context where the paddle is to be drawn.
      */
-    viewPlayer.prototype.draw =
+    ViewPlayer.prototype.draw =
       function(p_context)
       {
         if (this.model.visible === true)
+          console.log("Miau!");
           p_context.drawImage(this.v_canvas,
                               this.model.x - this.borderWidth,
                               this.model.y - this.borderWidth
                              );
       };
 
-    return viewPlayer;
+    return ViewPlayer;
   });

@@ -14,11 +14,12 @@
   {
     "buttonStartStop":
     {},
+
     "player":
     {
       "width": 20,
       "height": 20,
-      "pos": {"x": 50, "y": 50}
+      "pos": {"x": 300, "y": 300}
     }
   },
 
@@ -37,9 +38,9 @@
     }
   },
 
-  "control":
+  "controller":
   {
-    "player":
+    "player1":
     {
       "left": {"key": "ArrowLeft", "keyCode":37},
       "right": {"key": "ArrowRight", "keyCode": 39}

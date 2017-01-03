@@ -37,7 +37,6 @@ define
           l_models       =  { stage:  l_canvas_init,
                               button: l_model_button,
                               player: l_model_player
-
                             },
 
           l_views        = [l_view_button, l_view_player];
@@ -45,12 +44,13 @@ define
       l_canvas.width  = l_canvas_init.width;
       l_canvas.height = l_canvas_init.height;
 
-      console.log('Hier!')
+      console.log('Hier!');
 
       new ViewLoop(p_window, l_canvas, l_views).start();
-      controlKeyboard(p_window, p_init.control.player, l_model_player);
+      controlKeyboard(p_window, p_init.controller.player1, l_model_player);
       bomberman(p_init.game, l_models);
-      console.log('Wuff')
+
+      console.log('Wuff');
     }
 
 

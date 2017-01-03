@@ -17,14 +17,21 @@ define
     }
 
     ModelPlayer.prototype =
-    {
-      show:
-        function()
-        {this.visible = true;}
+      {
+        reset: function ()
+               {
+                 this.stop(); // By default, the paddle does not move around.
+                 //this.hide(); // By default, the paddle is invisible.
 
+                 this.x = this.x_start;
+                 this.y = this.y_start;
+               },
 
-    }
-
+        show: function ()
+              {
+                this.visible = true;
+              }
+      };
 
     return ModelPlayer;
   }
