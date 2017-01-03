@@ -1,0 +1,17 @@
+body
+{
+  text-align:       center;
+  padding:          100px;
+  background-color: #AAA;
+}
+
+
+#canvas
+{
+  border-color: #777;
+  border-width: 2px;
+  border-style: solid;
+
+  background-color: #FFFFFF;
+}
+

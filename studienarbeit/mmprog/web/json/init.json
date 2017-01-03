@@ -1,0 +1,50 @@
+{
+  "canvas":
+  {
+    "element": "canvas",
+    "width":   600,
+    "height":  600
+  },
+  "game":
+  {
+    "fps": 120
+  },
+
+  "model":
+  {
+    "buttonStartStop":
+    {},
+    "player":
+    {
+      "width": 20,
+      "height": 20,
+      "pos": {"x": 50, "y": 50}
+    }
+  },
+
+  "view":
+  {
+    "buttonStartStop":
+    {
+      "elementID": "button_start_stop"
+    },
+
+    "player":
+    {
+      "color": "aa55cc",
+      "borderWidth": 1,
+      "borderColor": "#000000"
+    }
+  },
+
+  "control":
+  {
+    "player":
+    {
+      "left": {"key": "ArrowLeft", "keyCode":37},
+      "right": {"key": "ArrowRight", "keyCode": 39}
+    }
+  }
+
+
+}
