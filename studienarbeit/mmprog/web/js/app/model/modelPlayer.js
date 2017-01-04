@@ -55,21 +55,17 @@ define
               switch (p_direction)
               {
                 case "left":
-                  this.x = -this.x_start;
-                  this.vx = -this.vx_start;
+                  this.x = -this.vx_start;
                   break;
                 case "right":
-                  this.x =  this.x_start;
-                  this.vx =  this.vx_start;
+                  this.x =  this.vx_start;
                   break;
 
                 case "up":
-                  this.y = -this.y_start;
-                  this.vy = -this.vy_start;
+                  this.y = -this.vy_start;
                   break;
                 case "down":
-                  this.y =  this.y_start;
-                  this.vy =  this.vy_start;
+                  this.y =  this.vy_start;
                   break;
               }
             }
@@ -77,8 +73,8 @@ define
         move:
           function(p_seconds)
           {
-            this.vx  += this.vx * p_seconds;
-            this.vy  += this.vy * p_seconds;
+            this.x  += this.vx * p_seconds;
+            this.y  += this.vy * p_seconds;
           },
 
         /** The left side of the paddle (read only). */
