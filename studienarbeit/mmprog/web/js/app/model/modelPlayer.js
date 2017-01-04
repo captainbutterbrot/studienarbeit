@@ -30,6 +30,8 @@ define
 
                  this.x = this.x_start;
                  this.y = this.y_start;
+                 this.vx = this.vx_start;
+                 this.vy = this.vy_start;
                },
 
         show: function ()
@@ -55,17 +57,17 @@ define
               switch (p_direction)
               {
                 case "left":
-                  this.x = -this.vx_start;
+                  this.x = -this.vx;
                   break;
                 case "right":
-                  this.x =  this.vx_start;
+                  this.x =  this.vx;
                   break;
 
                 case "up":
-                  this.y = -this.vy_start;
+                  this.y = -this.vy;
                   break;
                 case "down":
-                  this.y =  this.vy_start;
+                  this.y =  this.vy;
                   break;
               }
             }
