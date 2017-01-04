@@ -14,6 +14,9 @@ define
       this.x_start  = p_init.pos.x;
       this.y_start  = p_init.pos.y;
 
+      this.vx_start  = p_init.vel.x;
+      this.vy_start  = p_init.vel.y;
+
       this.reset(); // initializes further attributes
 
     }
@@ -35,8 +38,9 @@ define
               },
         stop:
           function()
-          { this.x = 0;
-            this.y = 0;
+          {
+            this.vx = 0;
+            this.vy = 0;
           },
 
         start:
@@ -45,36 +49,36 @@ define
 
             // react only if the paddle is visible not already moving
             if (this.visible === true &&
-              this.x === 0 && this.y === 0
+              this.vx === 0 && this.vy === 0
             )
             {
               switch (p_direction)
               {
                 case "left":
                   this.x = -this.x_start;
-                  this.x = -this.x_start;
+                  this.vx = -this.vx_start;
                   break;
                 case "right":
                   this.x =  this.x_start;
-                  this.x =  this.x_start;
+                  this.vx =  this.vx_start;
                   break;
 
                 case "up":
                   this.y = -this.y_start;
-                  this.y = -this.y_start;
+                  this.vy = -this.vy_start;
                   break;
                 case "down":
                   this.y =  this.y_start;
-                  this.y =  this.y_start;
+                  this.vy =  this.vy_start;
                   break;
               }
             }
           },
         move:
           function(p_seconds)
-          { this.x  += this.x * p_seconds;
-            this.y  += this.y * p_seconds;
-
+          {
+            this.vx  += this.vx * p_seconds;
+            this.vy  += this.vy * p_seconds;
           },
 
         /** The left side of the paddle (read only). */
