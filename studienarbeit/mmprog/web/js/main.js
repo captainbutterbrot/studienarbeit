@@ -19,8 +19,11 @@ requirejs.config
 
 requirejs
 ( ['loadjson!json/init.json', 'app/init'],
+
   function(initJSON, init)
-  {
+    {
+      console.log('main.js function()');
     init(window, initJSON);
+
   }
 );

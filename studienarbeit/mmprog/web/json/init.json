@@ -43,7 +43,9 @@
     "player1":
     {
       "left": {"key": "ArrowLeft", "keyCode":37},
-      "right": {"key": "ArrowRight", "keyCode": 39}
+      "right": {"key": "ArrowRight", "keyCode": 39},
+      "up": {"key": "ArrowUp", "keyCode":38},
+      "down": {"key": "ArrowDown", "keyCode": 40}
     }
   }
 

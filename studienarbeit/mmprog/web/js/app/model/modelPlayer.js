@@ -42,6 +42,7 @@ define
         start:
           function(p_direction)
           {
+
             // react only if the paddle is visible not already moving
             if (this.visible === true &&
               this.x === 0 && this.y === 0

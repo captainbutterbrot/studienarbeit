@@ -24,6 +24,7 @@ define
 
     function init(p_window, p_init)
     {
+      console.log('init.js function init()');
       var l_canvas_init  = p_init.canvas,
           l_document     = p_window.document,
           l_canvas       = l_document.getElementById(l_canvas_init.element),
