@@ -17,6 +17,9 @@ define
       this.vx_start  = p_init.vel.x;
       this.vy_start  = p_init.vel.y;
 
+      this.ax_start = p_init.acc.x;
+      this.ay_start = p_init.acc.y;
+
       this.reset(); // initializes further attributes
 
     }
@@ -30,8 +33,7 @@ define
 
                  this.x = this.x_start;
                  this.y = this.y_start;
-                 this.vx = this.vx_start;
-                 this.vy = this.vy_start;
+
                },
 
         show: function ()
@@ -43,6 +45,8 @@ define
           {
             this.vx = 0;
             this.vy = 0;
+            this.ax = 0;
+            this.ay = 0;
           },
 
         start:
@@ -57,17 +61,21 @@ define
               switch (p_direction)
               {
                 case "left":
-                  this.x = -this.vx;
+                  this.vx = -this.vx_start;
+                  this.ax = -this.ax_start;
                   break;
                 case "right":
-                  this.x =  this.vx;
+                  this.vx =  this.vx_start;
+                  this.ax =  this.ax_start;
                   break;
 
                 case "up":
-                  this.y = -this.vy;
+                  this.vy = -this.vy_start;
+                  this.ay = -this.ay_start;
                   break;
                 case "down":
-                  this.y =  this.vy;
+                  this.vy =  this.vy_start;
+                  this.ay =  this.ay_start;
                   break;
               }
             }
@@ -77,6 +85,8 @@ define
           {
             this.x  += this.vx * p_seconds;
             this.y  += this.vy * p_seconds;
+            this.vx += this.ax * p_seconds;
+            this.vy += this.ay * p_seconds;
           },
 
         /** The left side of the paddle (read only). */
