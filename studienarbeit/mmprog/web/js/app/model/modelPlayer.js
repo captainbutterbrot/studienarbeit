@@ -35,11 +35,8 @@ define
               },
         stop:
           function()
-          { this.vx = 0;
-            this.vy = 0;
-
-            this.ax = 0;
-            this.ay = 0;
+          { this.x = 0;
+            this.y = 0;
           },
 
         start:
@@ -47,31 +44,49 @@ define
           {
             // react only if the paddle is visible not already moving
             if (this.visible === true &&
-              this.vx === 0 && this.vy === 0
+              this.x === 0 && this.y === 0
             )
             {
               switch (p_direction)
               {
                 case "left":
-                  this.vx = -this.vx_start;
-                  this.ax = -this.ax_start;
+                  this.x = -this.x_start;
+                  this.x = -this.x_start;
                   break;
                 case "right":
-                  this.vx =  this.vx_start;
-                  this.ax =  this.ax_start;
+                  this.x =  this.x_start;
+                  this.x =  this.x_start;
                   break;
 
                 case "up":
-                  this.vy = -this.vy_start;
-                  this.ay = -this.ay_start;
+                  this.y = -this.y_start;
+                  this.y = -this.y_start;
                   break;
                 case "down":
-                  this.vy =  this.vy_start;
-                  this.ay =  this.ay_start;
+                  this.y =  this.y_start;
+                  this.y =  this.y_start;
                   break;
               }
             }
-          }
+          },
+        move:
+          function(p_seconds)
+          { this.x  += this.x * p_seconds;
+            this.y  += this.y * p_seconds;
+
+          },
+
+        /** The left side of the paddle (read only). */
+        get left()   { return this.x; },
+
+        /** The right side of the paddle (read only). */
+        get right()  { return this.x + this.width; },
+
+        /** The top side of the paddle (read only). */
+        get top()    { return this.y; },
+
+        /** The bottom side of the paddle (read only). */
+        get bottom() { return this.y + this.height; }
       };
 
     return ModelPlayer;
