@@ -19,7 +19,7 @@ define
 
 
       // Object 1 collides with left side of object 2
-      if (p_object1.vx < 0 && p_object1.x+p_object1.width>=p_object2.x //&&
+      if (p_object1.vx < 0 && p_object1.x+p_object1.width>=p_object2.x && (p_object1.y >=p_object2.y && p_object1.y+p_object1.y+height<= p_object2.y+p_object2.height)//&&
           //p_object1.y<=p_object2.y+p_object2.height && p_object1.y+p_object1.height >= p_object2.y
           )
       {
@@ -30,7 +30,7 @@ define
       }
 
       // Object 1 collides with right side of object 2
-      if (p_object1.vx > 0 && p_object1.x <= p_object2.x+p_object2.width// && p_object1.x+p_object1.width
+      if (p_object1.vx > 0 && p_object1.x <= p_object2.x+p_object2.width && (p_object1.y >=p_object2.y && p_object1.y+p_object1.y+height<= p_object2.y+p_object2.height)// && p_object1.x+p_object1.width
       )
       {
         p_object1.stop();
@@ -39,7 +39,8 @@ define
 
       // Object 1 collides with bottom of object 2
 
-      if (p_object1.vy < 0 && p_object1.y <= p_object2.y+p_object2.height)
+      if (p_object1.vy < 0 && p_object1.y <= p_object2.y+p_object2.height && (p_object1.x <= p_object2.x && p_object1.x+p_object1.width <= p_object2.x+p_object2.width)
+      )
       {
         p_object1.stop();
         p_object1.y = p_object2.y+p_object2.height;
@@ -49,7 +50,7 @@ define
       if (p_object1.vy > 0 && p_object1.y+p_object1.height >= p_object2.y)
       {
         p_object1.stop();
-        p_object1.y = p_object2.x - p_object1.height;
+        p_object1.y = p_object2.y - p_object1.height;
       }
     }
 
