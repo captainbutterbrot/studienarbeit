@@ -89,17 +89,9 @@ define
             this.vy += this.ay * p_seconds;
           },
 
-        /** The left side of the paddle (read only). */
-        get left()   { return this.x; },
 
-        /** The right side of the paddle (read only). */
-        get right()  { return this.x + this.width; },
 
-        /** The top side of the paddle (read only). */
-        get top()    { return this.y; },
 
-        /** The bottom side of the paddle (read only). */
-        get bottom() { return this.y + this.height; }
       };
 
     return ModelPlayer;

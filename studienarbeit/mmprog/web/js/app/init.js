@@ -9,7 +9,8 @@ define
     'controller/controlKeyboard',
     'model/modelWall', 'view/viewWall',
     'view/loop', 'model/loop',
-    'view/viewButton', 'model/modelButton'
+    'view/viewButton', 'model/modelButton',
+    'model/object'
   ],
   function(bomberman,
            ViewBomb, ModelBomb,
@@ -18,7 +19,8 @@ define
            controlKeyboard,
            ModelWall, ViewWall,
            ViewLoop, ModelLoop,
-           ViewButton, ModelButton
+           ViewButton, ModelButton,
+           object
   )
   {
 

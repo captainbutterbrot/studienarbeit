@@ -12,7 +12,7 @@ define
     "use strict";
     function bomberman(p_init, p_models)
     {
-      var l_stage          = p_models.stage,
+      var l_model_wall          = p_models.wall,
           l_button         = p_models.button,
           l_player         = p_models.player,
           l_models_movable = [],
@@ -49,7 +49,7 @@ define
 
       function f_collision()
       {
-        collision(l_stage, l_player);
+        collision(l_player,l_model_wall );
 
       }
     }
