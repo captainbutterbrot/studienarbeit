@@ -17,11 +17,18 @@
 
     "player":
     {
-      "width":  20,
-      "height": 20,
+      "width":  40,
+      "height": 40,
       "pos":    {"x": 300, "y": 300},
       "vel":    {"x": 15, "y": 15},
       "acc":      {"x": 500, "y":   500}
+    },
+
+    "wall":
+    {
+      "width": 40,
+      "height": 40,
+      "pos":    {"x": 500, "y": 500}
     }
   },
 
@@ -34,7 +41,14 @@
 
     "player":
     {
-      "color": "aa55cc",
+      "color": "#aa55cc",
+      "borderWidth": 1,
+      "borderColor": "#000000"
+    },
+
+    "wall":
+    {
+      "color": "#000000",
       "borderWidth": 1,
       "borderColor": "#000000"
     }

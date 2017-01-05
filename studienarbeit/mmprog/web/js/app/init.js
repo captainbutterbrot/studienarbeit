@@ -16,7 +16,7 @@ define
            stage,
            ModelPlayer, ViewPlayer,
            controlKeyboard,
-           Modelwall, ViewWall,
+           ModelWall, ViewWall,
            ViewLoop, ModelLoop,
            ViewButton, ModelButton
   )
@@ -35,12 +35,16 @@ define
           l_model_player   = new ModelPlayer(p_init.model.player),
           l_view_player    = new ViewPlayer(l_model_player, p_init.view.player, l_document),
 
+          l_model_wall   = new ModelWall(p_init.model.wall),
+          l_view_wall   = new ViewWall(l_model_wall, p_init.view.wall, l_document),
+
           l_models       =  { stage:  l_canvas_init,
                               button: l_model_button,
-                              player: l_model_player
+                              player: l_model_player,
+                              wall: l_model_wall
                             },
 
-          l_views        = [l_view_button, l_view_player];
+          l_views        = [l_view_button, l_view_player, l_view_wall];
 
       l_canvas.width  = l_canvas_init.width;
       l_canvas.height = l_canvas_init.height;
