@@ -12,7 +12,8 @@ define
     "use strict";
     function bomberman(p_init, p_models)
     {
-      var l_button         = p_models.button,
+      var l_stage          = p_models.stage,
+          l_button         = p_models.button,
           l_player         = p_models.player,
           l_models_movable = [],
           l_model_loop     = new ModelLoop(f_collision, p_init.fps, l_models_movable);
@@ -31,6 +32,8 @@ define
 
       function f_stop()
       {
+        l_player.stop();
+        l_model_loop.stop();
         l_button.label   = p_init.startGame;
         l_button.onClick = f_start;
         console.log("stop active");
@@ -46,7 +49,7 @@ define
 
       function f_collision()
       {
-
+        collision(l_stage, l_player);
 
       }
     }

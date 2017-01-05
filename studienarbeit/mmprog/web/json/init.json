@@ -2,8 +2,8 @@
   "canvas":
   {
     "element": "canvas",
-    "width":   600,
-    "height":  600
+    "width":   450,
+    "height":  450
   },
   "game":
   {
@@ -17,8 +17,8 @@
 
     "player":
     {
-      "width":  40,
-      "height": 40,
+      "width":  30,
+      "height": 30,
       "pos":    {"x": 300, "y": 300},
       "vel":    {"x": 15, "y": 15},
       "acc":      {"x": 500, "y":   500}
@@ -26,9 +26,9 @@
 
     "wall":
     {
-      "width": 40,
-      "height": 40,
-      "pos":    {"x": 500, "y": 500}
+      "width": 30,
+      "height": 30,
+      "pos":    {"x": 200, "y": 200}
     }
   },
 
