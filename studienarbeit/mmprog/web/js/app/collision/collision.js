@@ -53,6 +53,8 @@ define
       }
     }
 
+    //Kommentar
+
     return collision;
   }
 );
