@@ -53,7 +53,7 @@ define
       }
     }
 
-    //Kommentar
+    
 
     return collision;
   }
