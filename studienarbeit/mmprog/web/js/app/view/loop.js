@@ -30,24 +30,24 @@ define
     }
 
     ViewLoop.prototype =
-    {
-      start:
-        function()
-        {
-          if (this.v_timer == null)
-          { this.v_timer = this.v_window.requestAnimationFrame(this.m_update_view); }
-        },
-
-      stop:
-        function()
-        {
-          if (this.v_timer != null)
+      {
+        start:
+          function()
           {
-            this.v_window.cancelAnimationFrame(this.v_timer);
-            delete this.v_timer;
+            if (this.v_timer == null)
+            { this.v_timer = this.v_window.requestAnimationFrame(this.m_update_view); }
+          },
+
+        stop:
+          function()
+          {
+            if (this.v_timer != null)
+            {
+              this.v_window.cancelAnimationFrame(this.v_timer);
+              delete this.v_timer;
+            }
           }
-        }
-    };
+      };
 
     return ViewLoop;
   });

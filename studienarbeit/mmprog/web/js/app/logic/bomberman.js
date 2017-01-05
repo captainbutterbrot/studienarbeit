@@ -18,6 +18,7 @@ define
           l_models_movable = [],
           l_model_loop     = new ModelLoop(f_collision, p_init.fps, l_models_movable);
 
+
       // Store all model objects that have a move method within the array l_models_movable.
       for (var k in p_models)
       { //noinspection JSUnfilteredForInLoop

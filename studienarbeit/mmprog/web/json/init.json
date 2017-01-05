@@ -36,7 +36,9 @@
       "width": 30,
       "height": 30,
       "pos":    {"x": 200, "y": 200}
-    }
+    },
+
+    "wallsNr": 15
   },
 
   "view":
