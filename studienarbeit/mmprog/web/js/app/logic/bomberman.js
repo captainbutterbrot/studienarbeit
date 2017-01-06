@@ -56,5 +56,5 @@ define
 
       }
     }
-      return bomberman;
+    return bomberman;
   });

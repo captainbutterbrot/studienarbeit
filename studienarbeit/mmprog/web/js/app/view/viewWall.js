@@ -46,6 +46,10 @@ define
      *
      * @param p_context The 2d context where the paddle is to be drawn.
      */
+
+
+
+
     ViewWall.prototype.draw =
       function(p_context)
       {

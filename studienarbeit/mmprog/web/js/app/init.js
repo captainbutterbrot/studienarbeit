@@ -53,17 +53,21 @@ define
                               wall: l_model_wall,
                               walls: l_model_walls
                             };
+          l_views = [l_view_button, l_view_player, l_view_wall];
 
-          for (var j = 0; j < l_walls_nr; j++) {
+          for (var i = 0; i < l_walls_nr; i++) {
             l_model_walls[i] = new ModelWall(p_init.model.wall);
-            l_view_walls[i] = new ViewWall(l_model_wall, p_init.view.wall, l_document);
+            //l_views.push(new ViewWall(l_model_wall, p_init.view.wall, l_document));
+            l_view_walls[i+3] =new ViewWall(l_model_wall, p_init.view.wall, l_document);
             p_init.model.wall.pos.x += 30;
-            p_init.model.wall.pos.y = 0;
+            //p_init.model.wall.pos.y = 0;
+
+            console.log(l_model_walls[i].x);
           }
 
-          for(var i = 0; i < l_walls_nr; i++){
-          l_views = [l_view_button, l_view_player, l_view_wall, l_view_walls[i]];
-          }
+
+
+
 
       l_canvas.width  = l_canvas_init.width;
       l_canvas.height = l_canvas_init.height;
