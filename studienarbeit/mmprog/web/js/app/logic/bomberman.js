@@ -44,7 +44,10 @@ define
       function f_start()
       {
         l_player.show();
-        l_walls.show();
+        for(var i = 0; i < l_walls.length; i++){
+          l_walls[i].show();
+          console_log("Liebe")
+        }
         l_model_loop.start();
         l_button.onClick = f_stop;
         console.log("start active");
