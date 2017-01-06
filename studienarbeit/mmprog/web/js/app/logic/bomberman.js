@@ -15,6 +15,7 @@ define
       var l_model_wall          = p_models.wall,
           l_button         = p_models.button,
           l_player         = p_models.player,
+          l_walls          = p_models.walls,
           l_models_movable = [],
           l_model_loop     = new ModelLoop(f_collision, p_init.fps, l_models_movable);
 
@@ -43,6 +44,7 @@ define
       function f_start()
       {
         l_player.show();
+        l_walls.show();
         l_model_loop.start();
         l_button.onClick = f_stop;
         console.log("start active");

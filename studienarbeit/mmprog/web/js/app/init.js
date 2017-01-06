@@ -50,16 +50,19 @@ define
           l_models       =  { stage:  l_canvas_init,
                               button: l_model_button,
                               player: l_model_player,
-                              wall: l_model_wall
-                            },
+                              wall: l_model_wall,
+                              walls: l_model_walls
+                            };
 
-          l_views        = [l_view_button, l_view_player, l_view_wall];
-
-          for (var i = 0; i < l_walls_nr; i++) {
+          for (var j = 0; j < l_walls_nr; j++) {
             l_model_walls[i] = new ModelWall(p_init.model.wall);
             l_view_walls[i] = new ViewWall(l_model_wall, p_init.view.wall, l_document);
             p_init.model.wall.pos.x += 30;
             p_init.model.wall.pos.y = 0;
+          }
+
+          for(var i = 0; i < l_walls_nr; i++){
+          l_views = [l_view_button, l_view_player, l_view_wall, l_view_walls[i]];
           }
 
       l_canvas.width  = l_canvas_init.width;
@@ -68,10 +71,12 @@ define
       console.log('Hier!');
 
       new ViewLoop(p_window, l_canvas, l_views).start();
+      //ViewLoop(p_window, l_canvas, l_view_walls);
       controlKeyboard(p_window, p_init.controller.player1, l_model_player);
       bomberman(p_init.game, l_models);
+     // bomberman(p_init.game, l_model_walls);
 
-      function draw()
+/*      function draw()
       {
         l_context.clearRect(0, 0, l_canvas.width, l_canvas.height);
 
@@ -81,8 +86,8 @@ define
           l_model_wall.show(l_seconds);
           l_view_wall.draw(l_context);
         }
-      }
-      p_window.setInterval(draw, l_milliseconds);
+      }*/
+      //p_window.setInterval(draw, l_milliseconds);
       console.log('Wuff');
     }
 
