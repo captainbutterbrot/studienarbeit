@@ -30,9 +30,9 @@ define
       var l_canvas_init  = p_init.canvas,
           l_document     = p_window.document,
           l_canvas       = l_document.getElementById(l_canvas_init.element),
-          l_context      = l_canvas.getContext("2d"),
+          //l_context      = l_canvas.getContext("2d"),
           l_seconds      = 1 / p_init.game.fps,
-          l_milliseconds = 1000 * l_seconds,
+          //l_milliseconds = 1000 * l_seconds,
 
           l_model_button = new ModelButton(p_init.model.buttonStartStop),
           l_view_button = new ViewButton(l_model_button, p_init.view.buttonStartStop, l_document),
@@ -46,28 +46,34 @@ define
           l_model_walls       =  [],
           l_view_walls        = [],
           l_walls_nr    = p_init.model.wallsNr || 1,
+          l_views             = [],
+          l_models            = {};
 
-          l_models       =  { stage:  l_canvas_init,
-                              button: l_model_button,
-                              player: l_model_player,
-                              wall: l_model_wall,
-                              walls: l_model_walls
-                            };
-          l_views = [l_view_button, l_view_player, l_view_wall];
 
-          for (var i = 0; i < l_walls_nr; i++) {
-            l_model_walls[i] = new ModelWall(p_init.model.wall);
-            //l_views.push(new ViewWall(l_model_wall, p_init.view.wall, l_document));
-            l_view_walls[i+3] =new ViewWall(l_model_wall, p_init.view.wall, l_document);
+          for (var j = 0; j < l_walls_nr; j++) {
+            l_model_walls[j] = new ModelWall(p_init.model.wall);
             p_init.model.wall.pos.x += 30;
-            //p_init.model.wall.pos.y = 0;
-
-            console.log(l_model_walls[i].x);
+            p_init.model.wall.pos.y = 0;
+          }
+          for (var h = 0; h < l_walls_nr; h++)
+          {
+            l_view_walls[h] = new ViewWall(l_model_walls[h], p_init.view.wall, l_document);
+          }
+          for(var i = 3; i < 18; i++){
+              var k = 0;
+              l_views = [l_view_button, l_view_player, l_view_wall];
+              l_views[i] = l_view_walls[k];
+              //l_views.length = i;
+              k++;
           }
 
-
-
-
+          l_models       =  {
+            stage:  l_canvas_init,
+            button: l_model_button,
+            player: l_model_player,
+            wall: l_model_wall,
+            walls: l_model_walls
+          };
 
       l_canvas.width  = l_canvas_init.width;
       l_canvas.height = l_canvas_init.height;
@@ -92,6 +98,7 @@ define
         }
       }*/
       //p_window.setInterval(draw, l_milliseconds);
+
       console.log('Wuff');
     }
 
