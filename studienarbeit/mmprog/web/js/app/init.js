@@ -69,14 +69,15 @@ define
               //Push
               k++;
           }
-
-          l_models       =  {
-            stage:  l_canvas_init,
-            button: l_model_button,
-            player: l_model_player,
-            wall: l_model_wall,
-            walls: l_model_walls
-          };
+          for( var a = 0; a < l_walls_nr; a++){
+            l_models       =  {
+              stage:  l_canvas_init,
+              button: l_model_button,
+              player: l_model_player,
+              wall: l_model_wall,
+              walls: l_model_walls[a]
+            };
+          }
 
       l_canvas.width  = l_canvas_init.width;
       l_canvas.height = l_canvas_init.height;

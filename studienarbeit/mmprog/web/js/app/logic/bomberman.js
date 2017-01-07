@@ -20,7 +20,6 @@ define
           l_model_loop     = new ModelLoop(f_collision, p_init.fps, l_models_movable);
 
 
-
       // Store all model objects that have a move method within the array l_models_movable.
       for (var k in p_models)
       { //noinspection JSUnfilteredForInLoop
@@ -45,8 +44,9 @@ define
       function f_start()
       {
         l_player.show();
-        for(var z = 0; z<l_walls.length; z++) {
-          l_walls[z].show();
+        for(var i = 0; i < l_walls.length; i++){
+          l_walls[i].show();
+          console_log("Liebe")
         }
         l_model_loop.start();
         l_button.onClick = f_stop;
