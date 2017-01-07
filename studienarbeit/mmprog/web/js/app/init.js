@@ -66,6 +66,7 @@ define
               l_views = [l_view_button, l_view_player, l_view_wall, l_view_walls[1], l_view_walls[2]];
               // l_views[i] = l_view_walls[k];
               //l_views.length = i;
+              //Push
               k++;
           }
 
