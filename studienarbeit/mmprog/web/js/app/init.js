@@ -59,14 +59,11 @@ define
           {
             l_view_walls[h] = new ViewWall(l_model_walls[h], p_init.view.wall, l_document);
           }
-
-
           for(var i = 3; i < 18; i++){
               var k = 0;
               l_views = [l_view_button, l_view_player, l_view_wall, l_view_walls[1], l_view_walls[2]];
-              // l_views[i] = l_view_walls[k];
+              //l_views[i] = l_view_walls[k];
               //l_views.length = i;
-              //Push
               k++;
           }
           for( var a = 0; a < l_walls_nr; a++){
